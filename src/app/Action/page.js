@@ -79,15 +79,11 @@ function Funny() {
 
   return (
     <>
-      {/* Navigation buttons */}
+      {/* Navigation */}
       <div className="flex flex-wrap justify-center gap-4 bg-black py-4">
-        {/* Home Button */}
         <div className="flex justify-center w-full sm:w-auto mb-2 sm:mb-0">
           <Link href="/">
-            <button
-              className="bg-white text-black font-semibold text-lg sm:text-xl w-full sm:w-48 h-14 rounded-2xl relative group flex items-center justify-center overflow-hidden"
-              type="button"
-            >
+            <button className="bg-white text-black font-semibold text-lg sm:text-xl w-full sm:w-48 h-14 rounded-2xl relative group flex items-center justify-center overflow-hidden">
               <div className="absolute left-1 top-[4px] h-12 w-1/4 sm:w-12 flex items-center justify-center bg-red-600 rounded-xl group-hover:w-[calc(100%-8px)] transition-all duration-200 z-10">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
@@ -110,7 +106,6 @@ function Funny() {
           </Link>
         </div>
 
-        {/* Other Links */}
         <a
           href="/Funny"
           rel="noreferrer"
