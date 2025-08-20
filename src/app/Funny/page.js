@@ -2,7 +2,7 @@ import React from "react";
 import Link from "next/link";
 
 function Funny() {
- const movies = [
+  const movies = [
     {
       image: "https://image.tmdb.org/t/p/w500/udDclJoHjfjb8Ekgsd4FDteOkCU.jpg",
       title: "The Hangover",
@@ -60,22 +60,24 @@ function Funny() {
       url: "https://www.youtube.com/watch?v=UFBZ_uAbxS0",
     },
   ];
+
   return (
-     <>
-      {/* Button section */}
+    <>
+      {/* Navigation buttons */}
       <div className="h-14  text-1x5 text-amber-50 flex gap-8 bg-black justify-center">
         <div className="bg-black justify-center flex mb-5 ">
           <Link href="/">
             <button
-              className=" bg-white text-center w-48 rounded-2xl h-14 relative text-black text-xl font-semibold group"
+              className="bg-white text-black font-semibold text-lg sm:text-xl w-32 sm:w-48 h-12 sm:h-14 rounded-2xl relative group"
               type="button"
             >
-              <div className="bg-red-600 rounded-xl h-12 w-1/4 flex items-center justify-center absolute left-1 top-[4px] group-hover:w-[184px] z-10 duration-200">
+              <div className="bg-red-600 rounded-xl h-10 sm:h-12 w-1/4 sm:w-1/4 flex items-center justify-center absolute left-1 top-1 sm:top-[4px] group-hover:w-[184px] z-10 duration-200">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   viewBox="0 0 1024 1024"
-                  height="25px"
-                  width="25px"
+                  height="20px"
+                  width="20px"
+                  className="sm:h-6 sm:w-6"
                 >
                   <path
                     d="M224 480h640a32 32 0 1 1 0 64H224a32 32 0 0 1 0-64z"
@@ -87,74 +89,69 @@ function Funny() {
                   />
                 </svg>
               </div>
-              <p className="translate-x-2">Home</p>
+              <p className="translate-x-1 sm:translate-x-2">Home</p>
             </button>
           </Link>
         </div>
 
         <a
           href="/Funny"
-          // target="_blank"
-          rel="noreferrer"
-          className="px-5 py-3 rounded-xl bg-red-600 hover:bg-white/20 text-white backdrop-blur-md transition"
+          className="px-4 sm:px-5 py-2 sm:py-3 rounded-xl bg-red-600 hover:bg-white/20 text-white backdrop-blur-md transition"
         >
           Funny
         </a>
-
         <a
           href="/Action"
-          // target="_blank"
-          rel="noreferrer"
-          className="px-5 py-3 rounded-xl bg-red-600 hover:bg-white/20 text-white backdrop-blur-md transition"
+          className="px-4 sm:px-5 py-2 sm:py-3 rounded-xl bg-red-600 hover:bg-white/20 text-white backdrop-blur-md transition"
         >
           Action
         </a>
-
         <a
           href="/horror"
-          // target="_blank"
-          rel="noreferrer"
-          className="px-5 py-3 rounded-xl bg-red-600 hover:bg-white/20 text-white backdrop-blur-md transition"
+          className="px-4 sm:px-5 py-2 sm:py-3 rounded-xl bg-red-600 hover:bg-white/20 text-white backdrop-blur-md transition"
         >
           Horror
         </a>
       </div>
 
       {/* Movie cards */}
-      <section className="bg-black py-12 px-6">
-        <h2 className="text-3xl font-bold text-red-500 text-center mb-10">
+      <section className="bg-black py-12 px-4 sm:px-6">
+        <h2 className="text-2xl sm:text-3xl font-bold text-red-500 text-center mb-8 sm:mb-10">
           🎥 Funny Movies
         </h2>
-        <div className="grid md:grid-cols-4 sm:grid-cols-2 gap-8 max-w-6xl mx-auto">
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 sm:gap-8 max-w-6xl mx-auto">
           {movies.map((movie, index) => (
             <div
-  key={index}
-  className="bg-gray-900 text-white rounded-xl shadow-lg overflow-hidden hover:scale-105 transition transform duration-300 flex flex-col"
->
-  <img
-    src={movie.image}
-    alt={movie.title}
-    className="w-full h-64 object-cover"
-  />
-  <div className="p-4 flex flex-col flex-grow">
-    <h3 className="text-xl font-bold mb-4">{movie.title}</h3>
-    <p className="text-sm text-gray-300 flex-grow">{movie.description}</p>
-    <a
-      href={movie.trailer}
-      target="_blank"
-      rel="noreferrer"
-      className="mt-4 px-4 py-2 bg-red-600 rounded-lg hover:bg-red-700 transition text-center"
-    >
-      ▶ Watch Trailer
-    </a>
-  </div>
-</div>
+              key={index}
+              className="bg-gray-900 text-white rounded-xl shadow-lg overflow-hidden hover:scale-105 transition transform duration-300 flex flex-col"
+            >
+              <img
+                src={movie.image}
+                alt={movie.title}
+                className="w-full h-56 sm:h-64 object-cover"
+              />
+              <div className="p-4 flex flex-col flex-grow">
+                <h3 className="text-lg sm:text-xl font-bold mb-2 sm:mb-4">
+                  {movie.title}
+                </h3>
+                <p className="text-sm sm:text-base text-gray-300 flex-grow">
+                  {movie.description}
+                </p>
+                <a
+                  href={movie.url}
+                  target="_blank"
+                  rel="noreferrer"
+                  className="mt-3 sm:mt-4 px-3 sm:px-4 py-2 sm:py-2.5 bg-red-600 rounded-lg hover:bg-red-700 transition text-center text-sm sm:text-base"
+                >
+                  ▶ Watch Trailer
+                </a>
+              </div>
+            </div>
           ))}
         </div>
       </section>
     </>
   );
 }
-
 
 export default Funny;
