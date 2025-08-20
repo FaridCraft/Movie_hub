@@ -2,7 +2,7 @@
 import "./globals.css";
 
 function Page() {
-  const movies = [
+ const movies = [
     {
       image:
         "https://upload.wikimedia.org/wikipedia/en/5/56/Lilo_%26_Stitch_2025_Theatrical_Poster.jpg",
