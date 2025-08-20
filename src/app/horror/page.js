@@ -96,14 +96,14 @@ function Funny() {
   return (
     <>
       {/* Navigation buttons */}
-      <div className="h-14  text-1x5 text-amber-50 flex gap-8 bg-black justify-center">
-        <div className="bg-black justify-center flex mb-5 ">
+      <div className="h-14 text-1x5 text-amber-50 flex flex-wrap justify-center gap-4 sm:gap-8 bg-black">
+        <div className="bg-black justify-center flex mb-2 sm:mb-5 w-full sm:w-auto">
           <Link href="/">
             <button
-              className=" bg-white text-center w-48 rounded-2xl h-14 relative text-black text-xl font-semibold group"
+              className="bg-white text-center w-full sm:w-48 rounded-2xl h-14 relative text-black text-xl font-semibold flex items-center justify-center group overflow-hidden"
               type="button"
             >
-              <div className="bg-red-600 rounded-xl h-12 w-1/4 flex items-center justify-center absolute left-1 top-[4px] group-hover:w-[184px] z-10 duration-200">
+              <div className="absolute left-1 top-[4px] h-12 w-1/4 sm:w-12 flex items-center justify-center bg-red-600 rounded-xl group-hover:w-[calc(100%-8px)] transition-all duration-200 z-10">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   viewBox="0 0 1024 1024"
@@ -120,34 +120,31 @@ function Funny() {
                   />
                 </svg>
               </div>
-              <p className="translate-x-2">Home</p>
+              <p className="ml-4">Home</p>
             </button>
           </Link>
         </div>
 
         <a
           href="/Funny"
-          // target="_blank"
           rel="noreferrer"
-          className="px-5 py-3 rounded-xl bg-red-600 hover:bg-white/20 text-white backdrop-blur-md transition"
+          className="px-5 py-3 w-full sm:w-auto text-center rounded-xl bg-red-600 hover:bg-white/20 text-white backdrop-blur-md transition"
         >
           Funny
         </a>
 
         <a
           href="/Action"
-          // target="_blank"
           rel="noreferrer"
-          className="px-5 py-3 rounded-xl bg-red-600 hover:bg-white/20 text-white backdrop-blur-md transition"
+          className="px-5 py-3 w-full sm:w-auto text-center rounded-xl bg-red-600 hover:bg-white/20 text-white backdrop-blur-md transition"
         >
           Action
         </a>
 
         <a
           href="/horror"
-          // target="_blank"
           rel="noreferrer"
-          className="px-5 py-3 rounded-xl bg-red-600 hover:bg-white/20 text-white backdrop-blur-md transition"
+          className="px-5 py-3 w-full sm:w-auto text-center rounded-xl bg-red-600 hover:bg-white/20 text-white backdrop-blur-md transition"
         >
           Horror
         </a>
@@ -162,21 +159,21 @@ function Funny() {
           {movies.map((movie, index) => (
             <div
               key={index}
-              className="bg-gray-900 text-white rounded-xl shadow-lg overflow-hidden hover:scale-105 transition transform duration-300"
+              className="bg-gray-900 text-white rounded-xl shadow-lg overflow-hidden hover:scale-105 transition transform duration-300 flex flex-col"
             >
               <img
                 src={movie.image}
                 alt={movie.title}
-                className="w-full h-84 object-cover"
+                className="w-full h-64 object-cover"
               />
-              <div className="p-4">
+              <div className="p-4 flex flex-col flex-grow">
                 <h3 className="text-xl font-bold mb-4">{movie.title}</h3>
-                <p className="text-sm text-gray-300">{movie.description}</p>
+                <p className="text-sm text-gray-300 flex-grow">{movie.description}</p>
                 <a
-                  href={movie.href}
+                  href={movie.trailer}
                   target="_blank"
                   rel="noreferrer"
-                  className="mt-3 inline-block px-4 py-2 bg-red-600 rounded-lg hover:bg-red-700 transition"
+                  className="mt-4 px-4 py-2 bg-red-600 rounded-lg hover:bg-red-700 transition text-center"
                 >
                   ▶ Watch Trailer
                 </a>
