@@ -1,5 +1,9 @@
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
+import Button from "../components/Button";
+
+import { FaGithub, FaLinkedin, FaTwitter } from "react-icons/fa";
+import Link from "next/link"; // ✅ Import Link
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -22,7 +26,64 @@ export default function RootLayout({ children }) {
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
+        {/* Main Section */}
+        <main className="min-h-screen flex flex-col items-center justify-center bg-black text-center px-6 bg-gradient-to-b from-gray-900 to-black">
+          <Link
+            href="/page.js"
+            className="text-5xl font-extrabold text-red-500 mb-4 hover:text-white transition"
+          >
+            🍿 Welcome to MovieHub
+          </Link>
+
+          <p className="text-lg text-gray-300 max-w-2xl">
+            Discover the latest{" "}
+            <span className="font-semibold text-white">movies</span>, trending{" "}
+            <span className="font-semibold text-white">TV shows</span>, and
+            fan-favorite classics. Stay updated with trailers, ratings, and
+            recommendations!
+          </p>
+
+          <br />
+          <Button />
+        </main>
+
         {children}
+
+        {/* Footer Section */}
+        <footer className="bg-gray-900 text-gray-400 text-center py-6 mt-12">
+          <p className="mb-4">
+            © {new Date().getFullYear()} MovieVerse. All Rights Reserved.
+          </p>
+
+          <div className="flex justify-center gap-6 text-2xl">
+            <a
+              href="https://github.com/FaridCraft"
+              target="_blank"
+              rel="noreferrer"
+              className="hover:text-white"
+            >
+              <FaGithub />
+            </a>
+
+            <a
+              href="https://www.linkedin.com/in/farid-ullah-12125634a"
+              target="_blank"
+              rel="noreferrer"
+              className="hover:text-white"
+            >
+              <FaLinkedin />
+            </a>
+
+            <a
+              href="https://twitter.com/your-profile"
+              target="_blank"
+              rel="noreferrer"
+              className="hover:text-white"
+            >
+              <FaTwitter />
+            </a>
+          </div>
+        </footer>
       </body>
     </html>
   );
