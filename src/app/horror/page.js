@@ -2,7 +2,7 @@ import React from "react";
 import Link from "next/link";
 
 function Funny() {
-  const movies = [
+const movies = [
     {
       image:
         "https://musicart.xboxlive.com/7/40e42e00-0000-0000-0000-000000000002/504/image.jpg",
