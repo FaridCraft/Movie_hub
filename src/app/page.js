@@ -2,7 +2,7 @@
 import "./globals.css";
 
 function Page() {
- const movies = [
+  const movies = [
     {
       image:
         "https://upload.wikimedia.org/wikipedia/en/5/56/Lilo_%26_Stitch_2025_Theatrical_Poster.jpg",
@@ -103,7 +103,7 @@ function Page() {
   ];
 
   return (
-   <>
+    <>
       {/* Navigation */}
       <div className="text-1x5 text-amber-50 flex gap-8 bg-black justify-center">
         <a
