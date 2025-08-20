@@ -96,59 +96,62 @@ function Funny() {
   return (
     <>
       {/* Navigation buttons */}
-      <div className="h-14 text-1x5 text-amber-50 flex flex-wrap justify-center gap-4 sm:gap-8 bg-black">
-        <div className="bg-black justify-center flex mb-2 sm:mb-5 w-full sm:w-auto">
-          <Link href="/">
-            <button
-              className="bg-white text-center w-full sm:w-48 rounded-2xl h-14 relative text-black text-xl font-semibold flex items-center justify-center group overflow-hidden"
-              type="button"
-            >
-              <div className="absolute left-1 top-[4px] h-12 w-1/4 sm:w-12 flex items-center justify-center bg-red-600 rounded-xl group-hover:w-[calc(100%-8px)] transition-all duration-200 z-10">
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  viewBox="0 0 1024 1024"
-                  height="25px"
-                  width="25px"
-                >
-                  <path
-                    d="M224 480h640a32 32 0 1 1 0 64H224a32 32 0 0 1 0-64z"
-                    fill="#000000"
-                  />
-                  <path
-                    d="m237.248 512 265.408 265.344a32 32 0 0 1-45.312 45.312l-288-288a32 32 0 0 1 0-45.312l288-288a32 32 0 1 1 45.312 45.312L237.248 512z"
-                    fill="#000000"
-                  />
-                </svg>
-              </div>
-              <p className="ml-4">Home</p>
-            </button>
-          </Link>
+      <div className="flex flex-wrap justify-center gap-4 bg-black py-4">
+  {/* Home Button */}
+  <div className="flex justify-center w-full sm:w-auto mb-2 sm:mb-0">
+    <Link href="/">
+      <button
+        className="bg-white text-center w-full sm:w-48 rounded-2xl h-14 relative text-black text-xl font-semibold group flex items-center justify-center overflow-hidden"
+        type="button"
+      >
+        <div className="absolute left-1 top-[4px] h-12 w-1/4 sm:w-12 flex items-center justify-center bg-red-600 rounded-xl group-hover:w-[calc(100%-8px)] transition-all duration-200 z-10">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            viewBox="0 0 1024 1024"
+            height="25px"
+            width="25px"
+          >
+            <path
+              d="M224 480h640a32 32 0 1 1 0 64H224a32 32 0 0 1 0-64z"
+              fill="#000000"
+            />
+            <path
+              d="m237.248 512 265.408 265.344a32 32 0 0 1-45.312 45.312l-288-288a32 32 0 0 1 0-45.312l288-288a32 32 0 1 1 45.312 45.312L237.248 512z"
+              fill="#000000"
+            />
+          </svg>
         </div>
+        <p className="ml-4">Home</p>
+      </button>
+    </Link>
+  </div>
 
-        <a
-          href="/Funny"
-          rel="noreferrer"
-          className="px-5 py-3 w-full sm:w-auto text-center rounded-xl bg-red-600 hover:bg-white/20 text-white backdrop-blur-md transition"
-        >
-          Funnynn
-        </a>
+  {/* Other Links */}
+  <a
+    href="/Funny"
+    rel="noreferrer"
+    className="w-full sm:w-auto px-5 py-3 rounded-xl bg-red-600 hover:bg-white/20 text-white backdrop-blur-md text-center transition"
+  >
+    Funny
+  </a>
 
-        <a
-          href="/Action"
-          rel="noreferrer"
-          className="px-5 py-3 w-full sm:w-auto text-center rounded-xl bg-red-600 hover:bg-white/20 text-white backdrop-blur-md transition"
-        >
-          Action
-        </a>
+  <a
+    href="/Action"
+    rel="noreferrer"
+    className="w-full sm:w-auto px-5 py-3 rounded-xl bg-red-600 hover:bg-white/20 text-white backdrop-blur-md text-center transition"
+  >
+    Action
+  </a>
 
-        <a
-          href="/horror"
-          rel="noreferrer"
-          className="px-5 py-3 w-full sm:w-auto text-center rounded-xl bg-red-600 hover:bg-white/20 text-white backdrop-blur-md transition"
-        >
-          Horror
-        </a>
-      </div>
+  <a
+    href="/horror"
+    rel="noreferrer"
+    className="w-full sm:w-auto px-5 py-3 rounded-xl bg-red-600 hover:bg-white/20 text-white backdrop-blur-md text-center transition"
+  >
+    Horror
+  </a>
+</div>
+
 
       {/* Movies section */}
       <section className="bg-black py-12 px-6">
@@ -168,7 +171,9 @@ function Funny() {
               />
               <div className="p-4 flex flex-col flex-grow">
                 <h3 className="text-xl font-bold mb-4">{movie.title}</h3>
-                <p className="text-sm text-gray-300 flex-grow">{movie.description}</p>
+                <p className="text-sm text-gray-300 flex-grow">
+                  {movie.description}
+                </p>
                 <a
                   href={movie.trailer}
                   target="_blank"
