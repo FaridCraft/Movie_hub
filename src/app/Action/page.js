@@ -74,7 +74,6 @@ function Funny() {
         "A betrayed Roman general fights his way through the arena to seek vengeance against the corrupt emperor.",
       href: "https://youtu.be/owK1qxDselE",
     },
-    
   ];
 
   return (
