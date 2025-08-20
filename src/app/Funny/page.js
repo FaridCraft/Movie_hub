@@ -99,7 +99,7 @@ function Funny() {
           rel="noreferrer"
           className="px-5 py-3 rounded-xl bg-red-600 hover:bg-white/20 text-white backdrop-blur-md transition"
         >
-          Funny
+          Funnyy
         </a>
 
         <a
