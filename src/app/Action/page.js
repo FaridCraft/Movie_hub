@@ -1,5 +1,6 @@
 import React from "react";
 import Link from "next/link";
+
 function Funny() {
   const movies = [
     {
@@ -74,33 +75,20 @@ function Funny() {
         "A betrayed Roman general fights his way through the arena to seek vengeance against the corrupt emperor.",
       href: "https://youtu.be/owK1qxDselE",
     },
-    {
-      image: "https://m.media-amazon.com/images/I/81h5MCxMHDL._AC_SY679_.jpg",
-      title: "Top Gun: Maverick",
-      description:
-        "After 30 years, Maverick is still pushing the limits as a top naval aviator, training the next generation.",
-      href: "https://youtu.be/giXco2jaZ_4",
-    },
-    {
-      image: "https://m.media-amazon.com/images/I/81QehyV1upL._AC_SY679_.jpg",
-      title: "The Dark Knight",
-      description:
-        "Batman faces his greatest challenge yet as the Joker wreaks havoc on Gotham City.",
-      href: "https://youtu.be/EXeTwQWrcwY",
-    },
   ];
 
   return (
     <>
-      {/* Button section */}
-      <div className="h-14  text-1x5 text-amber-50 flex gap-8 bg-black justify-center">
-        <div className="bg-black justify-center flex mb-5 ">
+      {/* Navigation buttons */}
+      <div className="flex flex-wrap justify-center gap-4 bg-black py-4">
+        {/* Home Button */}
+        <div className="flex justify-center w-full sm:w-auto mb-2 sm:mb-0">
           <Link href="/">
             <button
-              className=" bg-white text-center w-48 rounded-2xl h-14 relative text-black text-xl font-semibold group"
+              className="bg-white text-black font-semibold text-lg sm:text-xl w-full sm:w-48 h-14 rounded-2xl relative group flex items-center justify-center overflow-hidden"
               type="button"
             >
-              <div className="bg-red-600 rounded-xl h-12 w-1/4 flex items-center justify-center absolute left-1 top-[4px] group-hover:w-[184px] z-10 duration-200">
+              <div className="absolute left-1 top-[4px] h-12 w-1/4 sm:w-12 flex items-center justify-center bg-red-600 rounded-xl group-hover:w-[calc(100%-8px)] transition-all duration-200 z-10">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   viewBox="0 0 1024 1024"
@@ -117,62 +105,63 @@ function Funny() {
                   />
                 </svg>
               </div>
-              <p className="translate-x-2">Home</p>
+              <p className="ml-4">Home</p>
             </button>
           </Link>
         </div>
 
+        {/* Other Links */}
         <a
           href="/Funny"
-          // target="_blank"
           rel="noreferrer"
-          className="px-5 py-3 rounded-xl bg-red-600 hover:bg-white/20 text-white backdrop-blur-md transition"
+          className="w-full sm:w-auto px-5 py-3 rounded-xl bg-red-600 hover:bg-white/20 text-white text-center backdrop-blur-md transition"
         >
           Funny
         </a>
-
         <a
           href="/Action"
-          // target="_blank"
           rel="noreferrer"
-          className="px-5 py-3 rounded-xl bg-red-600 hover:bg-white/20 text-white backdrop-blur-md transition"
+          className="w-full sm:w-auto px-5 py-3 rounded-xl bg-red-600 hover:bg-white/20 text-white text-center backdrop-blur-md transition"
         >
           Action
         </a>
-
         <a
           href="/horror"
-          // target="_blank"
           rel="noreferrer"
-          className="px-5 py-3 rounded-xl bg-red-600 hover:bg-white/20 text-white backdrop-blur-md transition"
+          className="w-full sm:w-auto px-5 py-3 rounded-xl bg-red-600 hover:bg-white/20 text-white text-center backdrop-blur-md transition"
         >
           Horror
         </a>
       </div>
 
-      <section className="bg-black py-12 px-6">
-        <h2 className="text-3xl font-bold text-red-500 text-center mb-10">
+      {/* Movies section */}
+      <section className="bg-black py-12 px-4 sm:px-6">
+        <h2 className="text-2xl sm:text-3xl font-bold text-red-500 text-center mb-8 sm:mb-10">
           🎥 Action Movies
         </h2>
-        <div className="grid md:grid-cols-4 sm:grid-cols-2 gap-8 max-w-6xl mx-auto">
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6 sm:gap-8 max-w-6xl mx-auto">
           {movies.map((movie, index) => (
             <div
               key={index}
-              className="bg-gray-900 text-white rounded-xl shadow-lg overflow-hidden hover:scale-105 transition transform duration-300"
+              className="bg-gray-900 text-white rounded-xl shadow-lg overflow-hidden hover:scale-105 transition transform duration-300 flex flex-col"
             >
               <img
                 src={movie.image}
                 alt={movie.title}
-                className="w-full h-94 object-cover"
+                className="w-full h-56 sm:h-64 object-cover"
               />
-              <div className="p-4">
-                <h3 className="text-xl font-bold mb-4">{movie.title}</h3>
-                <p className="text-sm text-gray-300">{movie.description}</p>
+              <div className="p-4 flex flex-col flex-grow">
+                <h3 className="text-lg sm:text-xl font-bold mb-2 sm:mb-4">
+                  {movie.title}
+                </h3>
+                <p className="text-sm sm:text-base text-gray-300 flex-grow">
+                  {movie.description}
+                </p>
                 <a
                   href={movie.href}
                   target="_blank"
                   rel="noreferrer"
-                  className="mt-3 inline-block px-4 py-2 bg-red-600 rounded-lg hover:bg-red-700 transition"
+                  className="mt-3 sm:mt-4 px-3 sm:px-4 py-2 sm:py-2.5 bg-red-600 rounded-lg hover:bg-red-700 transition text-center text-sm sm:text-base"
                 >
                   ▶ Watch Trailer
                 </a>
