@@ -97,68 +97,65 @@ function Funny() {
     <>
       {/* Navigation buttons */}
       <div className="flex flex-wrap justify-center gap-4 bg-black py-4">
-  {/* Home Button */}
-  <div className="flex justify-center w-full sm:w-auto mb-2 sm:mb-0">
-    <Link href="/">
-      <button
-        className="bg-white text-center w-full sm:w-48 rounded-2xl h-14 relative text-black text-xl font-semibold group flex items-center justify-center overflow-hidden"
-        type="button"
-      >
-        <div className="absolute left-1 top-[4px] h-12 w-1/4 sm:w-12 flex items-center justify-center bg-red-600 rounded-xl group-hover:w-[calc(100%-8px)] transition-all duration-200 z-10">
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            viewBox="0 0 1024 1024"
-            height="25px"
-            width="25px"
-          >
-            <path
-              d="M224 480h640a32 32 0 1 1 0 64H224a32 32 0 0 1 0-64z"
-              fill="#000000"
-            />
-            <path
-              d="m237.248 512 265.408 265.344a32 32 0 0 1-45.312 45.312l-288-288a32 32 0 0 1 0-45.312l288-288a32 32 0 1 1 45.312 45.312L237.248 512z"
-              fill="#000000"
-            />
-          </svg>
+        {/* Home Button */}
+        <div className="flex justify-center w-full sm:w-auto mb-2 sm:mb-0">
+          <Link href="/">
+            <button
+              className="bg-white text-black font-semibold text-lg sm:text-xl w-full sm:w-48 h-14 rounded-2xl relative group flex items-center justify-center overflow-hidden"
+              type="button"
+            >
+              <div className="absolute left-1 top-[4px] h-12 w-1/4 sm:w-12 flex items-center justify-center bg-red-600 rounded-xl group-hover:w-[calc(100%-8px)] transition-all duration-200 z-10">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  viewBox="0 0 1024 1024"
+                  height="25px"
+                  width="25px"
+                >
+                  <path
+                    d="M224 480h640a32 32 0 1 1 0 64H224a32 32 0 0 1 0-64z"
+                    fill="#000000"
+                  />
+                  <path
+                    d="m237.248 512 265.408 265.344a32 32 0 0 1-45.312 45.312l-288-288a32 32 0 0 1 0-45.312l288-288a32 32 0 1 1 45.312 45.312L237.248 512z"
+                    fill="#000000"
+                  />
+                </svg>
+              </div>
+              <p className="ml-4">Home</p>
+            </button>
+          </Link>
         </div>
-        <p className="ml-4">Home</p>
-      </button>
-    </Link>
-  </div>
 
-  {/* Other Links */}
-  <a
-    href="/Funny"
-    rel="noreferrer"
-    className="w-full sm:w-auto px-5 py-3 rounded-xl bg-red-600 hover:bg-white/20 text-white backdrop-blur-md text-center transition"
-  >
-    Funny
-  </a>
-
-  <a
-    href="/Action"
-    rel="noreferrer"
-    className="w-full sm:w-auto px-5 py-3 rounded-xl bg-red-600 hover:bg-white/20 text-white backdrop-blur-md text-center transition"
-  >
-    Action
-  </a>
-
-  <a
-    href="/horror"
-    rel="noreferrer"
-    className="w-full sm:w-auto px-5 py-3 rounded-xl bg-red-600 hover:bg-white/20 text-white backdrop-blur-md text-center transition"
-  >
-    Horror
-  </a>
-</div>
-
+        {/* Other Links */}
+        <a
+          href="/Funny"
+          rel="noreferrer"
+          className="w-full sm:w-auto px-5 py-3 rounded-xl bg-red-600 hover:bg-white/20 text-white text-center backdrop-blur-md transition"
+        >
+          Funny
+        </a>
+        <a
+          href="/Action"
+          rel="noreferrer"
+          className="w-full sm:w-auto px-5 py-3 rounded-xl bg-red-600 hover:bg-white/20 text-white text-center backdrop-blur-md transition"
+        >
+          Action
+        </a>
+        <a
+          href="/horror"
+          rel="noreferrer"
+          className="w-full sm:w-auto px-5 py-3 rounded-xl bg-red-600 hover:bg-white/20 text-white text-center backdrop-blur-md transition"
+        >
+          Horror
+        </a>
+      </div>
 
       {/* Movies section */}
-      <section className="bg-black py-12 px-6">
-        <h2 className="text-3xl font-bold text-red-500 text-center mb-10">
+      <section className="bg-black py-12 px-4 sm:px-6">
+        <h2 className="text-2xl sm:text-3xl font-bold text-red-500 text-center mb-8 sm:mb-10">
           🎥 Horror Movies
         </h2>
-        <div className="grid md:grid-cols-4 sm:grid-cols-2 gap-8 max-w-6xl mx-auto">
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6 sm:gap-8 max-w-6xl mx-auto">
           {movies.map((movie, index) => (
             <div
               key={index}
@@ -167,18 +164,20 @@ function Funny() {
               <img
                 src={movie.image}
                 alt={movie.title}
-                className="w-full h-64 object-cover"
+                className="w-full h-56 sm:h-64 object-cover"
               />
               <div className="p-4 flex flex-col flex-grow">
-                <h3 className="text-xl font-bold mb-4">{movie.title}</h3>
-                <p className="text-sm text-gray-300 flex-grow">
+                <h3 className="text-lg sm:text-xl font-bold mb-2 sm:mb-4">
+                  {movie.title}
+                </h3>
+                <p className="text-sm sm:text-base text-gray-300 flex-grow">
                   {movie.description}
                 </p>
                 <a
-                  href={movie.trailer}
+                  href={movie.href}
                   target="_blank"
                   rel="noreferrer"
-                  className="mt-4 px-4 py-2 bg-red-600 rounded-lg hover:bg-red-700 transition text-center"
+                  className="mt-3 sm:mt-4 px-3 sm:px-4 py-2 sm:py-2.5 bg-red-600 rounded-lg hover:bg-red-700 transition text-center text-sm sm:text-base"
                 >
                   ▶ Watch Trailer
                 </a>
