@@ -130,29 +130,33 @@ function Page() {
       </div>
 
       {/* Card Section */}
-      <section className="bg-black py-12 px-6">
-        <h2 className="text-3xl font-bold text-red-500 text-center mb-10">
-          🎥 Trending Movies
+      <section className="bg-black py-12 px-4 sm:px-6">
+        <h2 className="text-2xl sm:text-3xl font-bold text-red-500 text-center mb-8 sm:mb-10">
+          🎥 Funny Movies
         </h2>
-        <div className="grid md:grid-cols-4 sm:grid-cols-2 gap-8 max-w-6xl mx-auto">
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 sm:gap-8 max-w-6xl mx-auto">
           {movies.map((movie, index) => (
             <div
               key={index}
-              className="bg-gray-900 text-white rounded-xl shadow-lg overflow-hidden hover:scale-105 transition transform duration-300"
+              className="bg-gray-900 text-white rounded-xl shadow-lg overflow-hidden hover:scale-105 transition transform duration-300 flex flex-col"
             >
               <img
                 src={movie.image}
                 alt={movie.title}
-                className="w-full h-94 object-cover"
+                className="w-full h-56 sm:h-64 object-cover"
               />
-              <div className="p-4">
-                <h3 className="text-xl font-bold mb-4">{movie.title}</h3>
-                <p className="text-sm text-gray-300">{movie.description}</p>
+              <div className="p-4 flex flex-col flex-grow">
+                <h3 className="text-lg sm:text-xl font-bold mb-2 sm:mb-4">
+                  {movie.title}
+                </h3>
+                <p className="text-sm sm:text-base text-gray-300 flex-grow">
+                  {movie.description}
+                </p>
                 <a
-                  href={movie.trailer}
+                  href={movie.url}
                   target="_blank"
                   rel="noreferrer"
-                  className="mt-3 inline-block px-4 py-2 bg-red-600 rounded-lg hover:bg-red-700 transition"
+                  className="mt-3 sm:mt-4 px-3 sm:px-4 py-2 sm:py-2.5 bg-red-600 rounded-lg hover:bg-red-700 transition text-center text-sm sm:text-base"
                 >
                   ▶ Watch Trailer
                 </a>
