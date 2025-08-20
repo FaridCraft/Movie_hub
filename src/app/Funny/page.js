@@ -2,7 +2,7 @@ import React from "react";
 import Link from "next/link";
 
 function Funny() {
-  const movies = [
+ const movies = [
     {
       image: "https://image.tmdb.org/t/p/w500/udDclJoHjfjb8Ekgsd4FDteOkCU.jpg",
       title: "The Hangover",
@@ -60,7 +60,6 @@ function Funny() {
       url: "https://www.youtube.com/watch?v=UFBZ_uAbxS0",
     },
   ];
-
   return (
      <>
       {/* Button section */}
