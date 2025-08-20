@@ -144,27 +144,29 @@ function Funny() {
         <div className="grid md:grid-cols-4 sm:grid-cols-2 gap-8 max-w-6xl mx-auto">
           {movies.map((movie, index) => (
             <div
-  key={index}
-  className="bg-gray-900 text-white rounded-xl shadow-lg overflow-hidden hover:scale-105 transition transform duration-300 flex flex-col"
->
-  <img
-    src={movie.image}
-    alt={movie.title}
-    className="w-full h-64 object-cover"
-  />
-  <div className="p-4 flex flex-col flex-grow">
-    <h3 className="text-xl font-bold mb-4">{movie.title}</h3>
-    <p className="text-sm text-gray-300 flex-grow">{movie.description}</p>
-    <a
-      href={movie.trailer}
-      target="_blank"
-      rel="noreferrer"
-      className="mt-4 px-4 py-2 bg-red-600 rounded-lg hover:bg-red-700 transition text-center"
-    >
-      ▶ Watch Trailer
-    </a>
-  </div>
-</div>
+              key={index}
+              className="bg-gray-900 text-white rounded-xl shadow-lg overflow-hidden hover:scale-105 transition transform duration-300 flex flex-col"
+            >
+              <img
+                src={movie.image}
+                alt={movie.title}
+                className="w-full h-64 object-cover"
+              />
+              <div className="p-4 flex flex-col flex-grow">
+                <h3 className="text-xl font-bold mb-4">{movie.title}</h3>
+                <p className="text-sm text-gray-300 flex-grow">
+                  {movie.description}
+                </p>
+                <a
+                  href={movie.trailer}
+                  target="_blank"
+                  rel="noreferrer"
+                  className="mt-4 px-4 py-2 bg-red-600 rounded-lg hover:bg-red-700 transition text-center"
+                >
+                  ▶ Watch Trailer
+                </a>
+              </div>
+            </div>
           ))}
         </div>
       </section>
