@@ -2,7 +2,7 @@ import React from "react";
 import Link from "next/link";
 
 function Funny() {
-const movies = [
+  const movies = [
     {
       image:
         "https://musicart.xboxlive.com/7/40e42e00-0000-0000-0000-000000000002/504/image.jpg",
@@ -94,7 +94,7 @@ const movies = [
   ];
 
   return (
-       <>
+    <>
       {/* Button section */}
       <div className="h-14  text-1x5 text-amber-50 flex gap-8 bg-black justify-center">
         <div className="bg-black justify-center flex mb-5 ">
@@ -161,27 +161,29 @@ const movies = [
         <div className="grid md:grid-cols-4 sm:grid-cols-2 gap-8 max-w-6xl mx-auto">
           {movies.map((movie, index) => (
             <div
-  key={index}
-  className="bg-gray-900 text-white rounded-xl shadow-lg overflow-hidden hover:scale-105 transition transform duration-300 flex flex-col"
->
-  <img
-    src={movie.image}
-    alt={movie.title}
-    className="w-full h-64 object-cover"
-  />
-  <div className="p-4 flex flex-col flex-grow">
-    <h3 className="text-xl font-bold mb-4">{movie.title}</h3>
-    <p className="text-sm text-gray-300 flex-grow">{movie.description}</p>
-    <a
-      href={movie.trailer}
-      target="_blank"
-      rel="noreferrer"
-      className="mt-4 px-4 py-2 bg-red-600 rounded-lg hover:bg-red-700 transition text-center"
-    >
-      ▶ Watch Trailer
-    </a>
-  </div>
-</div>
+              key={index}
+              className="bg-gray-900 text-white rounded-xl shadow-lg overflow-hidden hover:scale-105 transition transform duration-300 flex flex-col"
+            >
+              <img
+                src={movie.image}
+                alt={movie.title}
+                className="w-full h-56 sm:h-64 object-cover"
+              />
+              <div className="p-4 flex flex-col flex-grow">
+                <h3 className="text-xl font-bold mb-4">{movie.title}</h3>
+                <p className="text-sm text-gray-300 flex-grow">
+                  {movie.description}
+                </p>
+                <a
+                  href={movie.trailer}
+                  target="_blank"
+                  rel="noreferrer"
+                  className="mt-4 px-4 py-2 bg-red-600 rounded-lg hover:bg-red-700 transition text-center"
+                >
+                  ▶ Watch Trailer
+                </a>
+              </div>
+            </div>
           ))}
         </div>
       </section>
